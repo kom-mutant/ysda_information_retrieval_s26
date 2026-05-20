@@ -1,0 +1,9 @@
+*msrank/
+*Pair*
+*QueryRMSE/
+*QuerySoftMax/
+*RMSE*
+*YetiRank*
+*documents.csv
+*.pkl
+*.ipynb_check*
