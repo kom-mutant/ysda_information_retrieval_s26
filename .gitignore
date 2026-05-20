@@ -5,4 +5,5 @@
 *RMSE*
 *YetiRank*
 *documents.csv
-*stemmed_texts.pkl
+*.pkl
+*.ipynb_check*
