@@ -7,6 +7,5 @@
 *documents.csv
 *.pkl
 *.ipynb_check*
-*.task_a_voc*
 *.task_b_ai_dete*
-*./CoAT*
+*/CoAT*
