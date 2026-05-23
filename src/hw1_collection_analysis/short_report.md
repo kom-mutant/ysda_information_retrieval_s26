@@ -9,12 +9,12 @@
 
 Описание коллекции:
 {
-    'Документы': 369721,
-    'Всего слов в коллекции': 73093729,
-    'Средняя длина одного документа, слов:': 197.7,
-    'Уникальных слов': 794568,
-    'Средняя длина одного слова': 4.795,
-    'Средняя длина уникального слова': 7.714}
+    '# documents': 369721,
+    'Collection size in words': 73093729,
+    'Avg. document length in words': 197.7,
+    '# unique words (types)': 794568,
+    'Avg. word length': 4.795,
+    'Avg. unique word (type) length': 7.714}
 }
 ### Task 2. Frequency list
 
@@ -91,9 +91,9 @@ Rank   Word                        Count
 84     second                     61,249
 85     south                      60,500
 86     high                       60,138
-===========-=
+==============
 
-Total stopword occurrences:   29,387,785
+Стоп-слов в тексте:   29,387,785
 Share of collection:          40.2%
 Top-30 words not in stoplist: ['first', 'also']
 
@@ -122,13 +122,13 @@ As a personal pronoun (both subject and object), one can be used to refer to ‘
 
 Zipf's law predicts frequency $\propto 1/\text{rank}$, which in log–log coordinates yields a straight line with slope $\approx -1$.
 
-(КАРТИНКА 1)
+(placeholder for FIGURE 1 Hips Law)
 
 ### Закон Хипса
 
 Vocabulary grows sublinearly with corpus size: $V(n) = K \cdot n^{\beta}$, where $\beta \in [0.4,\, 0.6]$ typically. A straight line in log–log coordinates confirms the law. Vocabulary size is sampled once per document for efficiency.
 
-(КАРТИНКА 2)
+(placeholder for Figure 2 Zipf's law)
 
 ### Task 3. Build a TOP-31 frequency list of word bigrams (15)
 
@@ -216,7 +216,7 @@ Expected outcome: vocabulary size smaller than stemming because lemmatisation us
 **Model: `bert-base-uncased`** — WordPiece subword tokenizer. Rationale:
 
 - `uncased` matches the lowercased collection — no casing signal is discarded.
-- `base` is the standard IR benchmark variant; `large` adds cost with no benefit at the tokenisation stage.
+- `base` is the standard IR benchmark variant; ]
 - The 30,522-subword vocabulary and merge rules are fixed from pre-training — **no tunable hyperparameters**.
 
 Expected outcome: total token count *exceeds* the original word count (rare surface forms are split into `##`-prefixed subpieces), but vocabulary size *decreases* (subwords are shared across many surface forms, giving better coverage).
@@ -224,11 +224,11 @@ Expected outcome: total token count *exceeds* the original word count (rare surf
 Часть со сравнением.
 
 
-метод обработки 	Всего токенов 	Средняя длина документов 	Unique tokens 	Avg token length 	Avg unique length
+Метод обработки 	Всего токенов 	Средняя длина документов 	Unique tokens 	Avg token length 	Avg unique length
 0 	Без доп.токенизации 	73093729 	197.70 	794568 	4.80 	7.71
 1 	Porter Stemming 	73093729 	197.70 	684579 	4.26 	7.34
 2 	spaCy lemmatization 	73106364 	197.73 	759322 	4.59 	7.64
 3 	BERT tokenization 	81185427 	219.59 	27528 	4.52 	6.63
 
-Вывод: 
-Stemming and lemmatisation reduce both total tokens and vocabulary; BERT subword tokenisation increases total tokens while also shrinking vocabulary through cross-word subunit sharing.
+**Что мы видим?**
+
