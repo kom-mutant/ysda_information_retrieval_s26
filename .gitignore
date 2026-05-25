@@ -6,6 +6,8 @@
 *YetiRank*
 *documents.csv
 *.pkl
-*.ipynb_check*
+*.ipynb_checkpoint
 *.task_b_ai_dete*
-*/CoAT*
+*CoAT/
+*runs/
+*models/
